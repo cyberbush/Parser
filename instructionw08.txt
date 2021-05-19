@@ -1,0 +1,30 @@
+Welcome bush0386
+cat /y/shared/Engineering/cs-drbc/assignments/cs210/w08.txt
+cat /y/shared/Engineering/cs-drbc/assignments/cs210/x08_in1.txt
+Lexer: identifies and numeric literals
+This assignmet builds off the previous one. In this assignemnt you are to
+expand your previous code to recognize the following in CCX.
+
+   Numeric Literal
+   CCX allows numeric literals in multiple forms. Your lexer will recognize a
+   simplified subset of CCX numeric literals. Each numeric literal encountered
+   by your lexer will start with a hexadecimal digit and will contain only the
+   following:
+      – hexadecimal digits (0 through 9, A through F and/or a through f)
+      – the special character ’.’ (but it can only have one, so 1.2.3 is not a
+        Numeric, but 1.2 is).
+
+   Identifier
+   Identifiers are used in programs to name entities such as variables. Every
+   programming language has its own rules as to what constitutes a legal
+   identifier. In CCX an identifier can be composed of letters, digits, and
+   underscores, but must start with a letter. You may assume that your lexer
+   will never encounter an identifier that is more than 256 characters long.
+
+Hint: By now the only thing left unlexed are Tokens:
+      Before you print a Token: see if it satisfies either of the constraints
+      above. If it does, print it as a Numeric: or Identifier:
+
+Hint2: isxdigit, isdigit and isalpha might all be useful to you.
+
+Note: Numeric takes presidence over Identifier, so DeadBeef is a Numeric.
