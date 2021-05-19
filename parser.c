@@ -1,8 +1,8 @@
 /**********************************************
  * Id: bush0386
  *
- * Compile: gcc -Wall w08.c -o w08
- * Run: ./w08 w08.txt
+ * Compile: gcc -Wall parser.c -o parser
+ * Run: ./parser test.txt
  *
  * This program reads in a file and breaks it 
  * into tokens, strings, comments, characters, 
