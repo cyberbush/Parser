@@ -36,7 +36,6 @@ NodePtr current = NULL;
 // Prototypes for functions
 void Sorter(char *line, int size);
 bool BuildComment(char *cmt, int start, int end);
-char* FinishComment(char *cmt, int size)
 void PrintToken(char *tok, int size);
 void PrintCharacter(char *chars, int size);
 void PrintString(char *str, int size);
@@ -83,7 +82,6 @@ int main(int argc, char *argv[]){
     // variables
     FILE *fp; 
     char *line = NULL;
-    char *end = NULL;
     size_t len;
     int read; // # of chars per line
     int mltcmt = 0;
@@ -98,17 +96,11 @@ int main(int argc, char *argv[]){
         if(mltcomment(line, 0, read) || mltcmt == 1){
             mltcmt = 1;
             finish = BuildComment(line, 0, read);
-            // check finish
+            printf("Comment: %s", line);
             if(finish){
-                // cut line to */ and print
-                // return rest of line
-                end = FinishComment(line, read);
                 mltcmt = 0;
-                // end of line
-                // read = getline(&line, &len, fp);
+                read = getline(&line, &len, fp);
             }
-            else
-                printf("Comment: %s", line);
         }
         if(mltcmt != 1)
             Sorter(line, read);
@@ -572,7 +564,7 @@ bool IsNumeric(char *num, int size){
     for(i = 0; i<size;){
         if(isxdigit(copy[i]))
             j++;
-        else if(copy[i] == '.' && special == 0 && size > 1){
+        else if(copy[i] == '.' && special == 0){
             j++;
             special = 1;
         }
