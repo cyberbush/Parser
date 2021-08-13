@@ -1,7 +1,7 @@
 # Parser
 This repository contains my custom parser that I built in C.
 
-The program takes a text file as an input and breaks it into separate parts. Functionally, it the reads the file line by line breaking each one into tokens, operators, keywords, strings, characters, comments, numerics, and identifiers. Then it prints the results. 
+The program takes a text file as an input and breaks it into separate parts. Functionally, it reads the file line by line breaking each one into tokens, operators, keywords, strings, characters, comments, numerics, and identifiers. Then it prints the results. 
 
 ## Usage
 Use the line below to compile the code and produce an excutable:
